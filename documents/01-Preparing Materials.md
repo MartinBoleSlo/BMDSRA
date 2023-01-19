@@ -1,7 +1,6 @@
 
 
 # Preparing Materials.
-
 ---
 The expectation is that the produced model can differentiate the various sequence files.
 Thus, the target labels are including: 
