@@ -11,3 +11,13 @@ BMD-SRA tries to differentiate the given sequence files into four categories inc
     <li>Single Amplified Genomes (SAGs) </li>
     <li>Isolated Genomes</li>
 </ol>
+
+For developing this model, some stages were tracked, which listed below:
+<ol>
+    <li>Preparing Metadata</li>
+    <li>Downloading Sequence Files</li>
+    <li>Feature Extraction</li>
+    <li>Outlier Detection</li>
+    <li>Developing Model</li>
+    <li>Evaluation Model</li>
+</ol>

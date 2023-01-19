@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a42c8147-4bc3-4333-ae31-3545ac5f043f" name="Changes" comment="update, Preparing sections, header line">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="a42c8147-4bc3-4333-ae31-3545ac5f043f" name="Changes" comment="Initial, readme file">
+      <change afterPath="$PROJECT_DIR$/documents/02-Downloading Sequence Files.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/documents/03-Feature Extraction.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -66,7 +68,21 @@
       <option name="project" value="LOCAL" />
       <updated>1674119415918</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Initial, readme file">
+      <created>1674120490197</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1674120490197</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Initial, readme file">
+      <created>1674120538422</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1674120538422</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -83,6 +99,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Initial, Preparing sections" />
     <MESSAGE value="update, Preparing sections, header line" />
-    <option name="LAST_COMMIT_MESSAGE" value="update, Preparing sections, header line" />
+    <MESSAGE value="Initial, readme file" />
+    <option name="LAST_COMMIT_MESSAGE" value="Initial, readme file" />
   </component>
 </project>
