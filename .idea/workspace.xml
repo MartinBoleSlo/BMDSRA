@@ -1,11 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a42c8147-4bc3-4333-ae31-3545ac5f043f" name="Changes" comment="Initial, readme file">
-      <change afterPath="$PROJECT_DIR$/documents/02-Downloading Sequence Files.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/documents/03-Feature Extraction.md" afterDir="false" />
+    <list default="true" id="a42c8147-4bc3-4333-ae31-3545ac5f043f" name="Changes" comment="Unit test of Sudolf class">
+      <change afterPath="$PROJECT_DIR$/Codes/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Codes/test/ValidationTest.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resource/subsra/ERR209506.fastq" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resource/subsra/SRR2545599.fastq" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resource/subsra/SRR3927025.fastq" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/documents/02-Downloading Sequence Files.md" beforeDir="false" afterPath="$PROJECT_DIR$/Codes/Preprocessing.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -18,9 +22,10 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Python Script" />
-        <option value="RMarkdown.notebook" />
         <option value="RMarkdown.document" />
+        <option value="RMarkdown.notebook" />
+        <option value="Python Script" />
+        <option value="Python Unit Test" />
       </list>
     </option>
   </component>
@@ -34,17 +39,108 @@
     <option name="version" value="2" />
   </component>
   <component name="ProjectId" id="2KUyMiV7tB1xBhJpG3EOAemFI5H" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;
   }
 }</component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\My Research\08- BioSeC\04-01- Publishing Code\BMDSRA" />
+      <recent name="C:\My Research\08- BioSeC\04-01- Publishing Code\BMDSRA\Codes" />
+      <recent name="C:\My Research\08- BioSeC\04-01- Publishing Code\BMDSRA\Codes\test" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Python tests.Python tests in ValidationTest.py">
+    <configuration name="Python tests for Sudolf.MyTestCase.test_something" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+      <module name="BMDSRA" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Codes/test" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;Sudolf.MyTestCase.test_something&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Python tests for validation.MyTestCase" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+      <module name="BMDSRA" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Codes/test" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;validation.MyTestCase&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Python tests in Sudolf.py" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+      <module name="BMDSRA" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Codes/test" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;$PROJECT_DIR$/Codes/test/Sudolf.py&quot;" />
+      <option name="_new_targetType" value="&quot;PATH&quot;" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Python tests in ValidationTest.py" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+      <module name="BMDSRA" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Codes/test" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;$PROJECT_DIR$/Codes/test/ValidationTest.py&quot;" />
+      <option name="_new_targetType" value="&quot;PATH&quot;" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Python tests in validation.py" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+      <module name="BMDSRA" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Codes/test" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;$PROJECT_DIR$/Codes/test/validation.py&quot;" />
+      <option name="_new_targetType" value="&quot;PATH&quot;" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python tests.Python tests in ValidationTest.py" />
+        <item itemvalue="Python tests.Python tests in validation.py" />
+        <item itemvalue="Python tests.Python tests for validation.MyTestCase" />
+        <item itemvalue="Python tests.Python tests in Sudolf.py" />
+        <item itemvalue="Python tests.Python tests for Sudolf.MyTestCase.test_something" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -82,7 +178,35 @@
       <option name="project" value="LOCAL" />
       <updated>1674120538422</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Updating, readme file: adding the stages">
+      <created>1674121334875</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1674121334875</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Adding fastq-dump required files">
+      <created>1674226345884</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1674226345884</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Updating, some change for getting the relevance address.">
+      <created>1674226439442</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1674226439442</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Unit test of Sudolf class">
+      <created>1674226471364</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1674226471364</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -97,9 +221,25 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="Initial, Preparing sections" />
     <MESSAGE value="update, Preparing sections, header line" />
     <MESSAGE value="Initial, readme file" />
-    <option name="LAST_COMMIT_MESSAGE" value="Initial, readme file" />
+    <MESSAGE value="Updating, readme file: adding the stages" />
+    <MESSAGE value="Adding fastq-dump required files" />
+    <MESSAGE value="Updating, some change for getting the relevance address." />
+    <MESSAGE value="Unit test of Sudolf class" />
+    <option name="LAST_COMMIT_MESSAGE" value="Unit test of Sudolf class" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/Codes/Sudolf.py</url>
+          <line>24</line>
+          <option name="timeStamp" value="7" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
