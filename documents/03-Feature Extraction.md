@@ -31,3 +31,4 @@ It is worth mentioning that by using the Z-curve Furrier method, we will have 19
 The entropy-based features are so fast and straightforward, so we used both Shannon and Tsallis to apply with different k-mer sizes.
 In this study, we extract entropy from 50 different sizes of k-mere. (entropy from k-mer-1, until the entropy from k-mer with the size of 50)
 This way is repeated for Tsallis entropy as well.
+At the end we will have the 120 various features, (id + 119 representative numbers).
