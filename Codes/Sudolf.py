@@ -11,7 +11,7 @@ from tqdm import tqdm
 class Sudolf:
     """
     : param tempdir: the address of a temporary directory for storing
-    : param out: the address of the output directory which the downloaded file should be stored.
+    : param out: the address of the output directory which the downloaded file should be stored
     : param ns: the number of spots
     : param ls: the length of spots
     : param nt: the number of threads
