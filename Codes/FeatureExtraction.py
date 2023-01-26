@@ -9,7 +9,7 @@ class FeatureExtraction:
         self.seq = seq.upper()
         print('')
 
-    def entropy_based(self, windows, method="shanon"):
+    def entropy_based(self, windows, method="shannon"):
         self.information_entropy = []
         for win in windows:
             probabilities = []
@@ -30,7 +30,7 @@ class FeatureExtraction:
                 q = 2
                 entropy_equation = [(p ** q) for p in probabilities]
                 entropy = (1 / (q - 1)) * (1 - sum(entropy_equation))
-            self.information_entropy.append(entropy)
+                self.information_entropy.append(entropy)
         return self.information_entropy
 
     def chunks(self, win):
