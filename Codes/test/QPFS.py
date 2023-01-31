@@ -10,7 +10,7 @@ from Codes.QPFS import QPFS
 class MyTestCase(unittest.TestCase):
 
     def test_weight(self):
-        path = "..\\..\\resource\\rawdata\\small.csv"
+        path = "..\\..\\resource\\3-features\\small-features.csv"
         data = pandas.read_csv(path)
         data.drop(columns='id', inplace=True)
         nc = data.shape[1] - 1
@@ -21,7 +21,7 @@ class MyTestCase(unittest.TestCase):
         self.assertEqual(most_important, "ent_tsal_38")  # add assertion here
 
     def test_uncertainty_matrix(self):
-        path = "..\\..\\resource\\rawdata\\small.csv"
+        path = "..\\..\\resource\\3-features\\small-features.csv"
         data = pandas.read_csv(path)
         data.drop(columns='id', inplace=True)
         nc = data.shape[1] - 1
@@ -32,7 +32,7 @@ class MyTestCase(unittest.TestCase):
         self.assertAlmostEqual(second_element, 0.81489743, places=5)  # add assertion here
 
     def test_discretize(self):
-        path = "..\\..\\resource\\rawdata\\small.csv"
+        path = "..\\..\\resource\\3-features\\small-features.csv"
         data = pandas.read_csv(path)
         data.drop(columns='id', inplace=True)
         nc = data.shape[1] - 1
@@ -43,7 +43,7 @@ class MyTestCase(unittest.TestCase):
         self.assertEqual(first_element, 9)  # add assertion here
 
     def test_QP(self):
-        path = "..\\..\\resource\\rawdata\\H.csv"
+        path = "..\\..\\resource\\3-features\\H.csv"
         data = pd.read_csv(path, header=None).to_numpy()
         nc = data.shape[0]
         nf = nc - 1
