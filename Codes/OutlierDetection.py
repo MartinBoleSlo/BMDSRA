@@ -54,8 +54,9 @@ def outlier_plot(data, label):
     sub_scaled_data.plot(kind='scatter', x=sub_scaled_data.columns[0], y=sub_scaled_data.columns[1], c='clusters',
                          cmap=mpl.colormaps['viridis'])
     plt.title("{0} Outliers".format(label))
-    path = "..\\resource\\0-images\\{0}_outlier.pdf".format(label)
-    plt.savefig(path)
+    path = "..\\resource\\0-images\\{0}_outlier.{1}"
+    plt.savefig(path.format(label, "pdf"))
+    plt.savefig(path.format(label, "svg"))
     return sub_scaled_data.index[sub_scaled_data['clusters'] == 1].tolist()
 
 
