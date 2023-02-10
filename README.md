@@ -23,9 +23,10 @@ For developing this model, some stages were tracked, which listed below:
 </ol>
 
 # How can you use it?
+There are two ways for using the outcomes of the study. Generating your own model or Applying the generated model in your project.
 ## Generating your own model
-There are well form documentation about the process for preparing training [data](resource/3-features/features.csv). 
-You can use the extracted features and generate your owm model.
+There is well-form documentation about preparing [training data](resource/3-features/features.csv) 
+You can use the extracted features and generate your own model.
 
 ## Load the generated model and apply it.
 The generated model is accessible here.
@@ -34,6 +35,7 @@ You can use the BMDSRA class and pass just two parameters.
     <li> The path of the model.</li>
     <li> The path of the sequence file (fastq) </li>
 </ol>
+
 It is worth mentioning that the BMD-SRA needs access to two files, including [FeatureExtraction](Codes/FeatureExtraction.py) and [Preprocessing](Codes/Preprocessing.py).
 
 ## Example:
