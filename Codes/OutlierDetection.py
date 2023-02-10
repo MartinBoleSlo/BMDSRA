@@ -35,6 +35,7 @@ def main():
     path = "..\\resource\\3-features\\training_data.csv"
     data.to_csv(path)
 
+
 def outlier_plot(data, label):
     eps = 0.3
     minPts = len(data.columns)
