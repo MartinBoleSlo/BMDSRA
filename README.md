@@ -21,3 +21,25 @@ For developing this model, some stages were tracked, which listed below:
     <li>Developing Model</li>
     <li>Evaluation Model</li>
 </ol>
+
+# How can you use it?
+## Generating your own model
+There are well form documentation about the process for preparing training [data](resource/3-features/features.csv). 
+You can use the extracted features and generate your owm model.
+
+## Load the generated model and apply it.
+The generated model is accessible here.
+You can use the BMDSRA class and pass just two parameters.
+<ol>
+    <li> The path of the model.</li>
+    <li> The path of the sequence file (fastq) </li>
+</ol>
+It is worth mentioning that the BMD-SRA needs access to two files, including [FeatureExtraction](Codes/FeatureExtraction.py) and [Preprocessing](Codes/Preprocessing.py).
+
+## Example:
+    from Codes.BMDSRA import BMDSRA
+    model_path = "..\\..\\resource\\4-model\\model.json"
+    seq_path = "..\\..\\resource\\2-subsra\\SRR1588386.fastq"
+    model = BMDSRA(model_path)
+    res = model.predict(seq_path)
+    print(res)
