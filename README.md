@@ -25,7 +25,9 @@ When developin this model, we followed the stages listed bellow:
 # How can you use it?
 There are two ways for using the outcome of this project. 
   * Generating your own model with the code provided
-  OR
+  
+or
+
   * Applying the generated model from this project to your own study.
 ## Generating your own model
 When generating your own model you first need to prepare [training data](resource/3-features/features.csv) 
