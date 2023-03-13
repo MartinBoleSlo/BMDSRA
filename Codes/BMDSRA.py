@@ -1,3 +1,4 @@
+import joblib
 import xgboost
 import xgboost as xgb
 import pandas as pd
@@ -9,14 +10,16 @@ from Codes.Preprocessing import validation, sampling
 
 class BMDSRA:
     model: xgb.Booster = None
+    scaler = None
     sequence_path = None
     sequence = None
     features = []
     feature_names = []
 
-    def __init__(self, model_path):
+    def __init__(self, model_path, scaler_path):
         self.model = xgb.Booster()
         self.model.load_model(model_path)
+        self.scaler = joblib.load(scaler_path)
 
     def read_file(self, path):
         if not validation(path):
@@ -52,8 +55,11 @@ class BMDSRA:
                 'ent_tsal_9', 'ent_tsal_39', 'fur_19', 'ent_tsal_17', 'ent_shan_12', 'ent_tsal_50', 'ent_shan_20',
                 'ent_tsal_18', 'ent_tsal_10', 'ent_shan_26', 'ent_shan_19', 'ent_tsal_16', 'ent_shan_36', 'ent_shan_16',
                 'ent_tsal_40', 'ent_tsal_21', 'fur_3']
+
         df = pd.DataFrame(np.array(self.features).reshape(1, len(self.features)), columns=self.feature_names)
         df = df[cols]
+        df = pd.DataFrame(self.scaler.transform(df), columns=cols)
+
         d_test = xgb.DMatrix(df)
         res = self.model.predict(d_test)
         labels = ['Amplicon', 'Isolated', 'Metagenome', 'SAGs']
