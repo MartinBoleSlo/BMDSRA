@@ -2,16 +2,24 @@ import getopt
 import math
 import matplotlib.pyplot as plt
 import pandas as pd
+import sklearn
 import xgboost as xgb
 from sklearn.preprocessing import StandardScaler
 from xgboost import XGBClassifier
 from xgboost import cv
+from sklearn.utils import shuffle
+from sklearn.model_selection import cross_val_predict as cvp
 from Codes.QPFS import QPFS
+import joblib
+
+
 
 
 def main():
     path = "..\\resource\\3-features\\training_data.csv"
     train_data = pd.read_csv(path, header=0, index_col=0)
+    train_data = shuffle(train_data)
+
     indexes = train_data['outliers'] == False
     train_data = train_data[indexes]
     train_data.drop(columns='outliers', inplace=True)
@@ -45,19 +53,42 @@ def main():
     data_dmatrix = xgb.DMatrix(data=scaled_data_x, label=scaled_data_y)
     param = {'eta': 0.25, 'max_depth': 15, 'min_child_weight': 1, 'gamma': 1e-4,
              'objective': 'multi:softprob', 'num_class': 4}
-    xgb_cv = cv(dtrain=data_dmatrix, params=param, nfold=5, num_boost_round=1000,
-                early_stopping_rounds=500, metrics="merror", as_pandas=True, seed=123)
-
-    scores_df = pd.DataFrame(xgb_cv)
-    scores_df.to_csv("..\\resource\\4-model\\cross_validation.csv")
-
     model = XGBClassifier(**param)
-    model.fit(scaled_data_x, scaled_data_y)
-    model.save_model("..\\resource\\4-model\\model.json")
+    prediction_label = cvp(model, scaled_data_x, scaled_data_y, n_jobs=3, cv=5)
+    true_label = scaled_data_y
+
+    ### labels = ['Amplicon', 'Isolated', 'Metagenome', 'SAGs']
+    cross = {'true': scaled_data_y, 'predicted': prediction_label}
+
+    ###confusion_matrix = sklearn.metrics.confusion_matrix(y_true=list(scaled_data_y), y_pred=list(prediction_label),
+    ###                                                    normalize='true')
+    ###cm_display = sklearn.metrics.ConfusionMatrixDisplay(confusion_matrix=confusion_matrix, display_labels=labels)
+    ###plt.savefig("..\\resource\\4-model\\confusion_matrix.pdf")
+
+    cross = pd.DataFrame(data=cross)
+    cross.to_csv("..\\resource\\4-model\\cross_validation.csv")
+
+    ### cm = confusion_matrix(y_true=true_label, y_pred=prediction_label, labels=[0, 1, 2, 3])
+    ### disp = ConfusionMatrixDisplay(confusion_matrix=cm, display_labels=labels)
+    ### disp.plot()
+
+    train_data = train_data[selected_features]
+    scale.fit(train_data.drop(columns='label'))
+    joblib.dump(scale, '..\\resource\\4-model\\scaler.gz')
+
+
+
+## xgb_cv = cv(dtrain=data_dmatrix, params=param, nfold=5, num_boost_round=1000,
+    ##            early_stopping_rounds=500, metrics="merror", as_pandas=True, seed=123)
+    ## scores_df = pd.DataFrame(xgb_cv)
+    ## scores_df.to_csv("..\\resource\\4-model\\cross_validation.csv")
+    ## model = XGBClassifier(**param)
+    ## model.fit(scaled_data_x, scaled_data_y)
+    ##
+    ## model.save_model("..\\resource\\4-model\\model.json")
 
 
 def importance_features_plot():
-
     importance = pd.read_csv("..\\resource\\3-features\\importance.csv", index_col=0)
     path = "..\\resource\\0-images\\importance-features.{0}"
     plt.style.use('ggplot')
@@ -70,7 +101,6 @@ def importance_features_plot():
     plt.xticks(rotation=90, ha='right', fontsize=7)
     plt.savefig(path.format("pdf"))
     plt.savefig(path.format("svg"))
-
 
 def feature_forward_addition(data: pd.DataFrame, rank):
     ffe = []  # Feature Forward Error
@@ -97,7 +127,6 @@ def feature_forward_addition(data: pd.DataFrame, rank):
     ffe_data_frame = pd.DataFrame(ffe)
     ffe_data_frame.to_csv("..\\resource\\4-model\\ffa.csv")
 
-
 def feature_forward_curve_plot():
     path = "..\\resource\\4-model\\ffe.csv"
     df = pd.read_csv(path)
@@ -112,6 +141,23 @@ def feature_forward_curve_plot():
     plt.savefig(path.format("pdf"))
     plt.savefig(path.format("svg"))
 
+def confusion_matrix_plot():
+    path = "..\\resource\\4-model\\cross_validation.csv"
+    df = pd.read_csv(path, header=0, index_col=0)
+
+    plt.style.use('ggplot')
+    fig, ax = plt.subplots(figsize=(10, 10))
+    labels = ['Amplicon', 'Isolated', 'Metagenome', 'SAGs']
+    cm = sklearn.metrics.confusion_matrix(df['true'], df['predicted'], normalize='true')
+    cm_display = sklearn.metrics.ConfusionMatrixDisplay(confusion_matrix=cm, display_labels=labels)
+    cm_display.plot(ax=ax, cmap=plt.cm.Reds)
+    plt.title('The Confusion matrix of the BMDSRA by 5-fold cross validation', fontsize=10, pad=20)
+    plt.yticks(rotation=90, ha='right')
+    plt.grid(False)
+    path = "..\\resource\\0-images\\confusion_matrix.{0}"
+    plt.savefig(path.format("pdf"))
+    plt.savefig(path.format("svg"))
+    print('')
 
 def main_slurm(arguments):
     print("Hello")
@@ -175,4 +221,5 @@ if __name__ == '__main__':
     # feature_forward_curve_plot()
     # main_slurm(sys.argv[1:])
     # importance_features_plot()
-      main()
+    #confusion_matrix_plot()
+    main()
